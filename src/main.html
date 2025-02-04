@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAMUEvents</title>
+    <link rel="stylesheet" href="./main.css">
+
+</head>
+
+<body>
+    <div class="response_box" id="output"> </div>
+
+    <form>
+        <textarea class="input-box" placeholder="Put your questions here. Please be patient for the response." id="input"></textarea>
+        <button type="submit" class="submit-box" id="Submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('Submit').addEventListener('click', (event) => {
+            event.preventDefault()
+            if (!document.getElementById('input').value) { 
+                return 
+            } else {
+                const line1 = document.createElement('div')
+                line1.textContent = `You: ${document.getElementById('input').value}`
+                tempoText = document.getElementById('input').value
+                document.getElementById('input').value = ''
+                document.getElementById('output').appendChild(line1)
+            }
+
+            fetch('http://127.0.0.1:6500/receiving_element', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    mainText: tempoText
+                })
+            }).then(receive => {
+                return receive.json()
+            }).then(jsonFile => {
+                const line2 = document.createElement('div')
+                line2.textContent = `AI: ${jsonFile.AIResponse}`
+                document.getElementById('output').appendChild(line2);
+            }).catch(err => {
+                console.error(`An error: ${err}`)
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(to bottom, rgb(156, 225, 250), rgb(234, 248, 250)); 
+    height: 688px;
+    margin: 0;
+    overflow: hidden;
+}
+
+div {
+    white-space: pre-line;
+    overflow: auto;
+}
+
+.response_box {
+    width: 1300px;
+    border-radius: 15px;
+    margin: 1% 8%;
+    border: 1.5px solid;
+    height: 430px;
+    background-color: rgb(255, 255, 255);
+
+    /*text style*/
+    padding-left: 25px;
+    line-height: 2;
+}
+
+.input-box {
+    /*box style*/
+    width: 1265px;
+    height: 150px;
+    resize : none;
+    margin: 10px 0 0 8%;
+    border-radius: 15px;
+    background-color: rgb(245, 245, 245);
+    /*words style*/
+    padding : 20px;
+    font-size : 18px;
+}
+
+.submit-box {
+    width: 70px;
+    margin: 10px ;
+}
