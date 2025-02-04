@@ -1,5 +1,5 @@
 # Project Discription:
-    This website uses AI (ChatGPT for now, but it may change in the future) to access the school event website (https://ers.tamu.edu/), providing a comprehensive view of what events are coming soon and when your event will start. 
+    This website uses AI (ChatGPT for now, but it may change in the future) to access the school event website (https://ers.tamu.edu/), providing a comprehensive view of what events are coming soon. 
 
     The API key in index.js is replaced by a string "APIkey" for security reasoning.
 
